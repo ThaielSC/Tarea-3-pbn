@@ -1,11 +1,10 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self -std=c++17
-LDFLAGS = # Puedes añadir aquí flags para el enlazador, ej: -lsfml-graphics
-LDLIBS =  # Puedes añadir aquí bibliotecas a enlazar, ej: -lm
+CXXFLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 
-TARGET = tarea3
 SRCDIR = src
 BUILDDIR = build
+TARGET_NAME = tarea3
+TARGET = $(BUILDDIR)/bin/$(TARGET_NAME)
 
 # Lista de directorios donde buscar archivos fuente .cpp
 SOURCEDIRS = $(SRCDIR) $(SRCDIR)/classes $(SRCDIR)/utils
@@ -16,29 +15,37 @@ SOURCES = $(foreach dir,$(SOURCEDIRS),$(wildcard $(dir)/*.cpp))
 # Alternativa recursiva (más flexible si añades nuevos subdirectorios bajo src):
 # SOURCES = $(shell find $(SRCDIR) -name '*.cpp' -type f)
 
-OBJECTS = $(SOURCES:$(SRCDIR)/%.cpp=$(BUILDDIR)/%.o)
+# Define el directorio de objetos
+OBJDIR = $(BUILDDIR)/objs
 
-# Establece el objetivo por defecto
-.DEFAULT_GOAL := all
+# Crea los nombres de los archivos objeto en el directorio OBJDIR
+OBJECTS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SOURCES))
 
 all: $(TARGET)
 
+# Crea el ejecutable a partir de los objects
 $(TARGET): $(OBJECTS)
-	@echo "Enlazando $@"
-	$(CXX) $(LDFLAGS) $^ -o $@ $(LDLIBS)
-
-$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@echo "Compilando $< -> $@"
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "==> Enlazando: $@"
+	@$(CXX) $(LDFLAGS) $^ -o $@ 
+
+# Regla para compilar los archivos fuente a archivos objeto
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	@mkdir -p $(dir $@)
+	@echo "==> Compilando $< -> $@"
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 run: $(TARGET)
-	@echo "Ejecutando $(TARGET)..."
-	./$(TARGET)
+	@clear
+	@echo "==> Ejecutando $(TARGET_NAME)..."
+	@./$(TARGET)
 
 clean:
-	@echo "Limpiando..."
-	rm -rf $(BUILDDIR) $(TARGET)
+	@echo "==> Limpiando..."
+	@rm -rf $(BUILDDIR)
 
-# Añade 'run' a la lista de objetivos PHONY
-.PHONY: all clean run
+example:
+	@chmod +x ./example/juego
+	@cd ./example && ./juego
+
+.PHONY: all clean run example
