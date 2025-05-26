@@ -23,6 +23,18 @@ OBJECTS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SOURCES))
 
 all: $(TARGET)
 
+# Archivo de tests
+TEST_SRC = ./tests/tests.cpp
+TEST_EXE = $(BUILDDIR)/bin/tests
+
+test: $(TEST_EXE)
+	@echo "==> Ejecutando tests..."
+	@./$(TEST_EXE)
+
+$(TEST_EXE): $(TEST_SRC) ./src/classes/player.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) $^ -o $@
+
 # Crea el ejecutable a partir de los objects
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(dir $@)
