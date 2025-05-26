@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-#include <iostream>
-
-using namespace std;
-
-int main() {
-  cout << "Hello, World!" << endl;
-=======
 #include "utils/readcsv.h"
 #include <iostream>
 using namespace std;
@@ -43,6 +35,5 @@ int main() {
   }
   cout << "======================\n";
 
->>>>>>> 316d5ea9d99eac8b10548c337d4fec0de2ddb49b
   return 0;
 }
