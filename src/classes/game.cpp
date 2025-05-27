@@ -1,7 +1,15 @@
 #include "game.h"
+#include "mazmorra.h"
 #include <iostream>
 using namespace std;
-Game::Game() {}
+Game::Game(string dungeon_path, string enemys_path) {
+  (void)dungeon_path;
+  (void)enemys_path;
+}
+
+vector<Mazmorra> Game::get_dungeons() {
+  return leerMazmorras("data/mazmorras.csv");
+}
 
 void Game::run() {
 

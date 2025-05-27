@@ -1,6 +1,6 @@
-#include "classes/game.h"
+#include "classes/menu.h"
 
 int main() {
-  Game game = Game();
-  game.run();
+  Menu mainMenu = Menu("data/mazmorras.csv", "data/enemigos.csv");
+  mainMenu.run();
 }
