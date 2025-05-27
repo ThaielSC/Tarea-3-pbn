@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
+CXXFLAGS = -std=c++17 -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 
 SRCDIR = src
 BUILDDIR = build
