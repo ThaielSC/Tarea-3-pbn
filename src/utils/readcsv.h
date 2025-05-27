@@ -1,6 +1,14 @@
+#ifndef READCSV_H
+#define READCSV_H
+
+#include "..//classes/enemigo.h"
+#include "../classes/jefe.h"
+#include "../classes/mazmorra.h"
 #include <string>
 #include <vector>
 
-using namespace std;
+vector<Mazmorra> leerMazmorras(const string &filename);
+vector<Enemigo> leerEnemigos(const string &nombreArchivo, Jefe &jefe,
+                             vector<Enemigo> &enemigosJefe);
 
-vector<string> read_csv(string);
+#endif
