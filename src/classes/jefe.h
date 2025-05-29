@@ -1,34 +1,23 @@
 #ifndef JEFE_H
 #define JEFE_H
 
+#include "entidad.h"
 #include <string>
-#include <vector>
-using namespace std;
 
-class Jefe {
+class Jefe : public Entidad {
 private:
-    string nombre;
-    int y, x;
-    vector<pair<int, int>> movimientos;
-    int vida;
-    int daño;
-    int rango;
+    std::string nombre;
     int frecuencia;
-    size_t indiceMovimiento = 0;
 
 public:
-    Jefe(const string& nombre, int y, int x, int vida, const vector<pair<int, int>>& movimientos, int daño, int rango, int frecuencia);
+    Jefe(const std::string& nombre, int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int daño, int rango, int frecuencia);
 
-    void mover();
+    void mover() override;
 
-    // Getters
-    int getX() const;
-    int getY() const;
-    int getVida() const;
-    int getDaño() const;
-    int getRango() const;
+    const std::string& getNombre() const;
     int getFrecuencia() const;
-    string getNombre() const;
+
+    static Jefe leerDesdeStream(std::ifstream& file);
 };
 
 #endif

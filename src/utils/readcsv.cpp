@@ -1,9 +1,8 @@
-#include "..//utils/readcsv.h"
 #include "../classes/enemigo.h"
 #include "../classes/jefe.h"
 #include "../classes/mazmorra.h"
+#include "../utils/readcsv.h"
 #include <fstream>
-#include <iostream>
 #include <sstream>
 using namespace std;
 
@@ -43,9 +42,9 @@ vector<Mazmorra> leerMazmorras(const string &archivo) {
     m.altoJefe = stoi(valor);
 
     // Leer sala del jefe
-    for (int i = 0; i < m.altoJefe; ++i) {
+    for (int i = 0; i < m.anchoJefe; ++i) {
       vector<string> fila;
-      for (int j = 0; j < m.anchoJefe; ++j) {
+      for (int j = 0; j < m.altoJefe; ++j) {
         getline(ss, valor, ',');
         fila.push_back(valor);
       }
