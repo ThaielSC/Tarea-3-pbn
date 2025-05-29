@@ -1,32 +1,24 @@
 #ifndef ENEMIGO_H
 #define ENEMIGO_H
 
+#include "entidad.h"
 #include <vector>
-using namespace std;
+#include <string>
 
-class Enemigo {
+class Enemigo : public Entidad {
 private:
-    int x, y;
-    vector<pair<int, int>> movimientos;
-    int vida;
-    int daño;
-    int rango;
     int frecuencia;
-    size_t indiceMovimiento = 0;
 
 public:
-    Enemigo(int y, int x, int vida, const vector<pair<int, int>>& movimientos, int daño, int rango, int frecuencia);
+    Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int daño, int rango, int frecuencia);
 
-    void mover();
+    virtual ~Enemigo() = default;
 
-    // Getters
-    int getX() const;
-    int getY() const;
-    int getVida() const;
-    int getDaño() const;
-    int getRango() const;
+    void mover() override;
+
     int getFrecuencia() const;
-    const vector<pair<int, int>>& getMovimientos() const;
+
+    static std::vector<Enemigo> leerDesdeCSV(const std::string &filename);
 };
 
 #endif

@@ -8,7 +8,5 @@
 #include <vector>
 
 vector<Mazmorra> leerMazmorras(const string &filename);
-vector<Enemigo> leerEnemigos(const string &nombreArchivo, Jefe &jefe,
-                             vector<Enemigo> &enemigosJefe);
 
 #endif

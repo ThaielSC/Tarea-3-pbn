@@ -1,10 +1,15 @@
-// #ifndef JUGADOR_H
+#ifndef JUGADOR_H
 #define JUGADOR_H
-#include <string>
-using namespace std;
 
-class Jugador {
+#include "entidad.h"
+
+class Jugador : public Entidad {
 public:
-  Jugador(int, int, int, int, int, string, string, bool, int, int, int, int,
-          int, int, int, bool, bool, bool, bool);
+    Jugador(int y, int x, int vida, int daño, int rango);
+
+    void mover() override;
+
+    virtual ~Jugador() = default;
 };
+
+#endif
