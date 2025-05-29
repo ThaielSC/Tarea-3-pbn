@@ -1,0 +1,1466 @@
+Cargando Mazmorras...
+Cargando Enemigos...
+DONE.
+
+Mazmorras disponibles:
+Mazmora 1 (tamaño: 15x4):
+X X X X 
+X L - X 
+X C - X 
+X X P X 
+X - - X 
+X - E X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+Sala del jefe (tamaño: 6x6):
+X X X X X X 
+X X L - X X 
+X - - - - X 
+X - - J - X 
+X X - - X X 
+X X X X X X 
+
+Enemigos en esta mazmora:
+  Enemigo 1 -> Posición: (5, 2), Vida: 30, Daño: 5, Rango: 3, Frecuencia: 2, Número de movimientos: 4
+  Jefe: hinox -> Posición: (3, 3), Vida: 90, Daño: 20, Rango: 3, Frecuencia: 3, Número de movimientos: 6
+  (No hay enemigos adicionales en la sala del jefe)
+
+----------------------------
+
+Mazmora 2 (tamaño: 5x30):
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+X - - - - L X X C - - - - - X - - C X E - - X E - - - - Y X 
+X - X X X X X X X X X P X X X - X X X X X P X X X X X P X X 
+X E - - - - - - - - - - - - - - - - - - - - - E - - - - K X 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
+
+Sala del jefe (tamaño: 6x12):
+X X X X X X X X X X X X 
+X - - - - X - X E - - X 
+X - E - X - L - X - - X 
+X - - - - X - X - J - X 
+X - - E - - - - - - - X 
+X X X X X X X X X X X X 
+
+Enemigos en esta mazmora:
+  Enemigo 1 -> Posición: (1, 19), Vida: 50, Daño: 5, Rango: 3, Frecuencia: 3, Número de movimientos: 4
+  Enemigo 2 -> Posición: (1, 23), Vida: 80, Daño: 15, Rango: 1, Frecuencia: 2, Número de movimientos: 2
+  Enemigo 3 -> Posición: (3, 1), Vida: 15, Daño: 10, Rango: 3, Frecuencia: 4, Número de movimientos: 4
+  Enemigo 4 -> Posición: (3, 23), Vida: 60, Daño: 20, Rango: 3, Frecuencia: 3, Número de movimientos: 0
+  Jefe: odolwa -> Posición: (9, 3), Vida: 110, Daño: 20, Rango: 3, Frecuencia: 5, Número de movimientos: 6
+  Enemigos en la sala del jefe:
+    Enemigo 1 -> Posición: (1, 8), Vida: 20, Daño: 20, Rango: 3, Frecuencia: 3, Número de movimientos: 4
+    Enemigo 2 -> Posición: (2, 2), Vida: 30, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 4
+    Enemigo 3 -> Posición: (4, 3), Vida: 30, Daño: 25, Rango: 3, Frecuencia: 4, Número de movimientos: 6
+
+----------------------------
+
+Mazmora 3 (tamaño: 9x9):
+X X X X X X X X X 
+X L - - - - - C X 
+X X X X X P X X X 
+X X E - X - - - X 
+X - - - X - - - X 
+X - X - - - E - X 
+X - X - - - - - X 
+X Y X K X - - - X 
+X X X X X X X X X 
+
+Sala del jefe (tamaño: 9x9):
+X X X X X X X X X 
+X X - - - - - X X 
+X - E - - - E - X 
+X - - X - X - - X 
+X - E - L - E - X 
+X - - X - X - - X 
+X - E - X - E - X 
+X X - - J - - X X 
+X X X X X X X X X 
+
+Enemigos en esta mazmora:
+  Enemigo 1 -> Posición: (3, 2), Vida: 20, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 3
+  Enemigo 2 -> Posición: (5, 6), Vida: 35, Daño: 12, Rango: 3, Frecuencia: 3, Número de movimientos: 5
+  Jefe: iruoma -> Posición: (4, 7), Vida: 120, Daño: 15, Rango: 1, Frecuencia: 3, Número de movimientos: 4
+  Enemigos en la sala del jefe:
+    Enemigo 1 -> Posición: (2, 2), Vida: 20, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 4
+    Enemigo 2 -> Posición: (2, 6), Vida: 20, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 4
+    Enemigo 3 -> Posición: (4, 2), Vida: 20, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 2
+    Enemigo 4 -> Posición: (4, 6), Vida: 20, Daño: 10, Rango: 3, Frecuencia: 3, Número de movimientos: 2
+    Enemigo 5 -> Posición: (6, 2), Vida: 30, Daño: 20, Rango: 3, Frecuencia: 2, Número de movimientos: 4
+    Enemigo 6 -> Posición: (6, 6), Vida: 30, Daño: 20, Rango: 3, Frecuencia: 2, Número de movimientos: 4
+
+----------------------------
+
+Elige una mazmorra (1 a 3): Elegiste la mazmorra #1
+
+Elige una habilidad para Link (Ninguno atraviesa muros):
+1. Salto: Permite saltar una casilla vacía o de enemigos.
+2. Escudo: Permite protegerse de un ataque recibido en la dirección actual.
+3. Arco: Permite atacar en un rango de 5x5 hacia la dirección actual con 10 de daño.
+4. Bomba: Permite romper muros adyacentes o atacar enemigos adyacentes (100 de daño), solo se puede usar 3 veces.
+5. Gancho: Permite adherirse a paredes y cofres para moverse rápidamente, tambien atacar en línea recta a enemigos (5 de daño).
+Ingresa el número de tu habilidad: 
+Has elegido la habilidad: Salto
+Escribe cualquier símbolo para comenzar el juego...
+
+=============================
+Mapa:
+X X X X 
+X L - X 
+X C - X 
+X X P X 
+X - E X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X L - X 
+X U - X 
+X X P X 
+X E - X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Has abierto un cofre! Has recogido una llave. 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X L - X 
+X U - X 
+X X P X 
+X - - X 
+X E - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - L X 
+X U - X 
+X X P X 
+X - - X 
+X - E X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - L X 
+X U - X 
+X X P X 
+X - E X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U L X 
+X X P X 
+X E - X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U L X 
+X X - X 
+X - - X 
+X E - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Has abierto una puerta! 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X L X 
+X - - X 
+X - E X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - L X 
+X - ! X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Un enemigo está a punto de atacar! 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - L X 
+X - ! X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Un enemigo está a punto de atacar! Ataque con espada a enemigo en (5, 2) 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - $ X 
+X - $ X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Un enemigo te ataca! Pierdes 5 de vida. Ataque con espada a enemigo en (5, 2) 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 95
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - L X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+Ataque con espada a enemigo en (5, 2) ¡El enemigo ha sido derrotado! Recuperas 20 de vida. 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - L X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X L - X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X L - X 
+X - - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X L - X 
+X - C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X L C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X L C X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X L U X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Has abierto un cofre! Has recogido una llave. 
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X L U X 
+X - - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X L - X 
+X P X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 1
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X L - X 
+X - X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Has abierto una puerta! 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X L X X 
+X - - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X L - X 
+X - K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X L K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X L K X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 0
+Llave del jefe: 0
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X L U X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+¡Has recogido la llave del jefe! 
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X L U X 
+X - X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X - U X 
+X L X X 
+X - X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X - U X 
+X - X X 
+X L X X 
+X - Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X - U X 
+X - X X 
+X - X X 
+X L Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X 
+X - - X 
+X U - X 
+X X - X 
+X - - X 
+X - - X 
+X - U X 
+X - - X 
+X - X X 
+X - - X 
+X - U X 
+X - X X 
+X - X X 
+X L Y X 
+X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Llaves: 0
+Llave del jefe: 1
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+Actuar (C): Solo frente a puertas y cofres
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X L - X X 
+X - - - - X 
+X - - J - X 
+X X - - X X 
+X X X X X X 
+
+¡Entras a la sala del jefe! ¡Prepárate para el combate! Has abierto la puerta del jefe. 
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 100
+Vida de hinox: 90
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X L - X X 
+X - - - - X 
+X - J - - X 
+X X - - X X 
+X X X X X X 
+
+
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Vida de hinox: 90
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - L - - X 
+X - ! - - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Vida de hinox: 90
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - L - - X 
+X - ! - - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 100
+Vida de hinox: 80
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - $ - - X 
+X $ - - - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe te ataca! Pierdes 20 de vida. ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 80
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - L - - X 
+X - J - - X 
+X X - - X X 
+X X X X X X 
+
+
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 80
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - L - X 
+X - ! - - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! 
+
+=============================
+
+Dirección actual: DERECHA
+Vida: 80
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - L - X 
+X - ! - - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 80
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - A $ - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe te ataca! Pierdes 20 de vida. 
+
+=============================
+
+Dirección actual: ABAJO
+Vida: 60
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - J L - X 
+X X - - X X 
+X X X X X X 
+
+
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 60
+Vida de hinox: 70
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - ! L - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 60
+Vida de hinox: 60
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - ! L - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 60
+Vida de hinox: 50
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - $ $ - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe te ataca! Pierdes 20 de vida. ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 40
+Vida de hinox: 40
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): Destino jefe:
+Destino 2
+
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - $ L - X 
+X X - - X X 
+X X X X X X 
+
+¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 40
+Vida de hinox: 30
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - ! L - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 40
+Vida de hinox: 20
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - ! L - X 
+X X - - X X 
+X X X X X X 
+
+¡El jefe se prepara para atacar! ¡Ataque con la espada al jefe en (3, 2) 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 40
+Vida de hinox: 10
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+=============================
+Mapa:
+X X X X X X 
+X X - - X X 
+X - - - - X 
+X - V L - X 
+X X - - X X 
+X X X X X X 
+
+¡Ataque con la espada al jefe en (3, 2) ¡Has derrotado al jefe! 
+
+=============================
+
+Dirección actual: IZQUIERDA
+Vida: 40
+El jefe ha sido derrotado.
+Habilidad (Z): Salto
+Atacar (X): 10 daño, solo frente a enemigos
+
+Comando (WASD/Z/X/C, P para salir): 
+Felicidades! Has completado la mazmorra.
+Gracias por jugar.
+
+=============================
+Estadísticas finales:
+  Cofres abiertos: 2
+  Puertas abiertas: 2
+  Enemigos derrotados: 2
+  Pasos recorridos: 19
