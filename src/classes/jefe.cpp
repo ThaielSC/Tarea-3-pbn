@@ -4,7 +4,7 @@
 using namespace std;
 
 Jefe::Jefe(const string &nombre, int y, int x, int vida,
-           const vector<pair<int, int>> &movimientos, int daño, int rango,
+           const vector<pair<int, int> > &movimientos, int daño, int rango,
            int frecuencia)
     : Enemigo(y, x, vida, movimientos, daño, rango, frecuencia),
       nombre(nombre) {}
