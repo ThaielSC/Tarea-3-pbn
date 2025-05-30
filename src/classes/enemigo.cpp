@@ -3,11 +3,15 @@
 #include <sstream>
 using namespace std;
 
-Enemigo::Enemigo(int y, int x, int vida, const vector<pair<int, int>>& movimientos, int daño, int rango, int frecuencia)
-    : Entidad(y, x, vida, movimientos, rango, daño), frecuencia(frecuencia) {}
+Enemigo::Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int daño, int rango, int frecuencia)
+    : Entidad(y, x, vida, movimientos, daño, rango), frecuencia(frecuencia) {}
 
 int Enemigo::getFrecuencia() const {
     return frecuencia;
+}
+
+int Enemigo::getNumeroMovimientos() const {
+    return movimientos.size();
 }
 
 void Enemigo::mover() {
@@ -18,38 +22,33 @@ void Enemigo::mover() {
     indiceMovimiento = (indiceMovimiento + 1) % movimientos.size();
 }
 
-vector<Enemigo> Enemigo::leerDesdeCSV(const string &filename) {
-    ifstream file(filename);
-    string line;
-    vector<Enemigo> enemigos;
 
-    while (getline(file, line)) {
-        istringstream ss(line);
-        string token;
-        vector<string> datos;
+Enemigo Enemigo::leerDesdeStream(std::istream& is) {
+    std::string line;
+    if (!std::getline(is, line) || line.empty())
+        throw std::runtime_error("Error al leer línea de enemigo");
 
-        while (getline(ss, token, ',')) {
-            datos.push_back(token);
-        }
+    std::istringstream ss(line);
+    std::vector<std::string> datos;
+    std::string token;
+    while (std::getline(ss, token, ',')) datos.push_back(token);
 
-        int y = stoi(datos[0]);
-        int x = stoi(datos[1]);
-        int numMovs = stoi(datos[2]);
-        vector<pair<int, int>> movimientos;
+    if (datos.size() < 7)
+        throw std::runtime_error("Datos insuficientes para crear Enemigo");
 
-        for (int i = 0; i < numMovs; ++i) {
-            int dy = stoi(datos[3 + 2 * i]);
-            int dx = stoi(datos[3 + 2 * i + 1]);
-            movimientos.emplace_back(dy, dx);
-        }
-
-        int vida = stoi(datos[3 + 2 * numMovs]);
-        int daño = stoi(datos[4 + 2 * numMovs]);
-        int rango = stoi(datos[5 + 2 * numMovs]);
-        int frecuencia = stoi(datos[6 + 2 * numMovs]);
-
-        enemigos.emplace_back(y, x, vida, movimientos, daño, rango, frecuencia);
+    int y = stoi(datos[0]);
+    int x = stoi(datos[1]);
+    int numMovs = stoi(datos[2]);
+    std::vector<std::pair<int, int>> movimientos;
+    for (int i = 0; i < numMovs; ++i) {
+        int dy = stoi(datos[3 + 2 * i]);
+        int dx = stoi(datos[3 + 2 * i + 1]);
+        movimientos.emplace_back(dy, dx);
     }
+    int vida = stoi(datos[3 + 2 * numMovs]);
+    int daño = stoi(datos[4 + 2 * numMovs]);
+    int rango = stoi(datos[5 + 2 * numMovs]);
+    int frecuencia = stoi(datos[6 + 2 * numMovs]);
 
-    return enemigos;
+    return Enemigo(y, x, vida, movimientos, daño, rango, frecuencia);
 }

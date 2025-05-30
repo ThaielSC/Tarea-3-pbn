@@ -18,13 +18,17 @@ const string& Jefe::getNombre() const {
     return nombre;
 }
 
+int Jefe::getNumeroMovimientos() const {
+    return movimientos.size();
+}
+
 int Jefe::getFrecuencia() const {
     return frecuencia;
 }
 
-Jefe Jefe::leerDesdeStream(ifstream& file) {
+Jefe Jefe::leerDesdeStream(std::istream& is) {
     string line;
-    getline(file, line);
+    getline(is, line);
     istringstream ss(line);
     string token;
     vector<string> datos;

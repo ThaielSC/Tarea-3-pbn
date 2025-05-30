@@ -50,6 +50,7 @@ X - - - - X - X - J - X
 X - - E - - - - - - - X 
 X X X X X X X X X X X X 
 
+
 Enemigos en esta mazmora:
   Enemigo 1 -> Posición: (1, 19), Vida: 50, Daño: 5, Rango: 3, Frecuencia: 3, Número de movimientos: 4
   Enemigo 2 -> Posición: (1, 23), Vida: 80, Daño: 15, Rango: 1, Frecuencia: 2, Número de movimientos: 2

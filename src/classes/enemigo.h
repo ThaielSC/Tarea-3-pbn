@@ -10,7 +10,9 @@ private:
     int frecuencia;
 
 public:
-    Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int daño, int rango, int frecuencia);
+    Enemigo() = default;
+
+    Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int> > & movimientos, int daño, int rango, int frecuencia);
 
     virtual ~Enemigo() = default;
 
@@ -18,7 +20,10 @@ public:
 
     int getFrecuencia() const;
 
-    static std::vector<Enemigo> leerDesdeCSV(const std::string &filename);
+    int getNumeroMovimientos() const;
+
+    static Enemigo leerDesdeStream(std::istream& is);
+
 };
 
 #endif

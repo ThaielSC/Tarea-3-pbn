@@ -9,4 +9,6 @@
 
 vector<Mazmorra> leerMazmorras(const string &filename);
 
+void mostrarEnemigos(const Mazmorra& mazmorra);
+
 #endif

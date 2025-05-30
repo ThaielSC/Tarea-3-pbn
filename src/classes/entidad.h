@@ -8,13 +8,15 @@ class Entidad {
 protected:
     int y, x;
     int vida;
-    std::vector<std::pair<int, int>> movimientos;
+    std::vector<std::pair<int, int> > movimientos;
     int rango;
     int daño;
     int indiceMovimiento;
 
 public:
-    Entidad(int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int rango, int daño);
+    Entidad() = default;
+
+    Entidad(int y, int x, int vida, const std::vector<std::pair<int, int> > & movimientos, int rango, int daño);
 
     int getX() const;
     int getY() const;
