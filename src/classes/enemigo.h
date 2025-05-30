@@ -2,28 +2,35 @@
 #define ENEMIGO_H
 
 #include "entidad.h"
-#include <vector>
 #include <string>
+#include <vector>
 
 class Enemigo : public Entidad {
 private:
-    int frecuencia;
+  int frecuencia;
+  std::vector<std::pair<int, int>> movimientos;
+  int indiceMovimiento;
 
 public:
-    Enemigo() = default;
+  Enemigo() = default;
 
-    Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int> > & movimientos, int daño, int rango, int frecuencia);
+  Enemigo(int y, int x, int vida,
+          const std::vector<std::pair<int, int>> &movimientos, int daño,
+          int rango, int frecuencia);
 
-    virtual ~Enemigo() = default;
+  virtual ~Enemigo() = default;
 
-    void mover() override;
+  void mover() override;
 
-    int getFrecuencia() const;
+  int getFrecuencia() const;
 
-    int getNumeroMovimientos() const;
+  int getNumeroMovimientos() const;
 
-    static Enemigo leerDesdeStream(std::istream& is);
+  bool notMovments();
 
+  static Enemigo leerDesdeStream(std::istream &is);
+
+  void attack();
 };
 
 #endif
