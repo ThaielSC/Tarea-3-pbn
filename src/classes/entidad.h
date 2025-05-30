@@ -24,6 +24,10 @@ public:
   int getRango() const;
   int getDaño() const;
   void updatePos(int, int);
+  
+  // Nuevos métodos para manejar la vida
+  void recibirDaño(int cantidad);
+  bool estaVivo() const;
 
   virtual void mover() = 0;
 };

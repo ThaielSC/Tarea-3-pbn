@@ -31,6 +31,11 @@ public:
   
   void mostrar() const;
   void actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY, int nuevoX);
+  
+  // Nuevos métodos para manejar enemigos
+  Enemigo* obtenerEnemigoEn(int y, int x);
+  void eliminarEnemigoEn(int y, int x);
+  void actualizarEnemigo(const Enemigo& enemigo);
 
 private:
   vector<Enemigo> enemigosIniciales;

@@ -157,17 +157,29 @@ string Jugador::atacar() {
 
   // Verificar si hay enemigo
   if (hayEnemigoEnDireccion(enemigoY, enemigoX)) {
+    Enemigo* enemigo = mazmorra->obtenerEnemigoEn(enemigoY, enemigoX);
+    if (!enemigo) return "";
+    
+    // Aplicar daño al enemigo
+    enemigo->recibirDaño(getDaño());
+    
     stringstream mensaje;
     mensaje << "Ataque con espada a enemigo en (" << enemigoY << ", "
-            << enemigoX << ") ¡El enemigo ha sido derrotado!";
+            << enemigoX << ")";
     
-    // Eliminar el enemigo y actualizar el mapa
-    mazmorra->salaPrincipal[enemigoY][enemigoX] = "- ";
-    mazmorra->actualizarPosicionJugador(getY(), getX(), getY(), getX());
+    // Si el enemigo muere, eliminarlo
+    if (!enemigo->estaVivo()) {
+      mensaje << " ¡El enemigo ha sido derrotado!";
+      mazmorra->eliminarEnemigoEn(enemigoY, enemigoX);
+    } else {
+      mensaje << " (Vida restante del enemigo: " << enemigo->getVida() << ")";
+      mazmorra->actualizarEnemigo(*enemigo);
+    }
     
     debeAtacar = false;
     return mensaje.str();
   }
+  
   debeAtacar = false;
   return "";
 }

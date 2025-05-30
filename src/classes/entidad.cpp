@@ -16,3 +16,11 @@ void Entidad::updatePos(int newx, int newy) {
 
 void Entidad::setX(int newx) { x = newx; }
 void Entidad::setY(int newy) { y = newy; }
+
+void Entidad::recibirDaño(int cantidad) {
+    vida = max(0, vida - cantidad);
+}
+
+bool Entidad::estaVivo() const {
+    return vida > 0;
+}

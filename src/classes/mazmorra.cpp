@@ -56,3 +56,71 @@ void Mazmorra::actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY,
         salaPrincipal[nuevoY][nuevoX] = "L ";
     }
 }
+
+Enemigo* Mazmorra::obtenerEnemigoEn(int y, int x) {
+    // Buscar en enemigos iniciales
+    for(auto& enemigo : enemigosIniciales) {
+        if(enemigo.getY() == y && enemigo.getX() == x) {
+            return &enemigo;
+        }
+    }
+    
+    // Buscar en enemigos del jefe
+    for(auto& enemigo : enemigosJefe) {
+        if(enemigo.getY() == y && enemigo.getX() == x) {
+            return &enemigo;
+        }
+    }
+    
+    // Verificar si es el jefe
+    if(jefe.getY() == y && jefe.getX() == x) {
+        return &jefe;
+    }
+    
+    return nullptr;
+}
+
+void Mazmorra::eliminarEnemigoEn(int y, int x) {
+    // Eliminar de enemigos iniciales
+    auto it = enemigosIniciales.begin();
+    while(it != enemigosIniciales.end()) {
+        if(it->getY() == y && it->getX() == x) {
+            it = enemigosIniciales.erase(it);
+            salaPrincipal[y][x] = "- ";
+            return;
+        }
+        ++it;
+    }
+    
+    // Eliminar de enemigos del jefe
+    it = enemigosJefe.begin();
+    while(it != enemigosJefe.end()) {
+        if(it->getY() == y && it->getX() == x) {
+            it = enemigosJefe.erase(it);
+            salaJefe[y][x] = "- ";
+            return;
+        }
+        ++it;
+    }
+}
+
+void Mazmorra::actualizarEnemigo(const Enemigo& enemigo) {
+    int y = enemigo.getY();
+    int x = enemigo.getX();
+    
+    // Actualizar en enemigos iniciales
+    for(auto& e : enemigosIniciales) {
+        if(e.getY() == y && e.getX() == x) {
+            e = enemigo;
+            return;
+        }
+    }
+    
+    // Actualizar en enemigos del jefe
+    for(auto& e : enemigosJefe) {
+        if(e.getY() == y && e.getX() == x) {
+            e = enemigo;
+            return;
+        }
+    }
+}
