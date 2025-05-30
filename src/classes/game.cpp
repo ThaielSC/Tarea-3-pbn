@@ -111,10 +111,19 @@ void Game::run() {
     throw runtime_error("No se ha inicializado correctamente el juego");
   }
 
+  auto enemigos = mazmorra->getEnemigosIniciales();
+
+  for (Enemigo &enemigo : enemigos) {
+    enemigo.setMap(*mazmorra); // ahora sí puedes modificar
+  }
   char comando;
   while (!gameOver) {
     limpiarPantalla();
     mostrarEstado();
+
+    for (Enemigo &enemigo : enemigos) {
+      enemigo.mover();
+    }
 
     if (!(std::cin >> comando)) {
       std::cin.clear();
