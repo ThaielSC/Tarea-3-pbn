@@ -24,8 +24,8 @@ private:
   int llaves;
   bool llavejefe;
 
-  void mostrarEstado() const;
-  void procesarComando(char comando);
+  void mostrarEstado(string resultado) const;
+  string procesarComando(char comando);
   void limpiarPantalla() const;
 
 public:

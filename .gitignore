@@ -1,0 +1,12 @@
+# Ignorar archivos de compilación
+*.o
+*.exe
+
+# Ignorar carpetas temporales
+build/
+tmp/
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+

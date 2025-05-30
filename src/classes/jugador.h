@@ -10,7 +10,8 @@ private:
     char direccionActual;
     char ultimaTecla;
     bool esperandoMovimiento;  // Dirección correcta
-    Mazmorra* mazmorra;  // Puntero a la mazmorra actual
+    bool debeAtacar;          // Controla si debe ejecutar un ataque
+    Mazmorra* mazmorra;       // Puntero a la mazmorra actual
     bool hayEnemigoEnDireccion(int& enemigoY, int& enemigoX) const;
 
 public:

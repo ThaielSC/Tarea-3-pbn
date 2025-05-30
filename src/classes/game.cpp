@@ -28,7 +28,7 @@ vector<Mazmorra> &Game::get_dungeons() {
 
 void Game::limpiarPantalla() const { system("clear"); }
 
-void Game::mostrarEstado() const {
+void Game::mostrarEstado(string resultado) const {
   std::cout << "=============================" << std::endl;
   std::cout << "Mapa:" << std::endl;
   mazmorra->mostrar();
@@ -36,6 +36,10 @@ void Game::mostrarEstado() const {
 
   std::cout << "=============================" << std::endl;
   std::cout << std::endl;
+
+  if (!resultado.empty()) {
+    std::cout << resultado << std::endl << std::endl;
+  }
 
   // Mostrar información del jugador
   std::cout << "Dirección actual: ";
@@ -66,7 +70,7 @@ void Game::mostrarEstado() const {
   std::cout << "Comando (WASD/Z/X/C, P para salir): ";
 }
 
-void Game::procesarComando(char comando) {
+string Game::procesarComando(char comando) {
     comando = std::tolower(comando);
     
     switch(comando) {
@@ -76,32 +80,29 @@ void Game::procesarComando(char comando) {
         case 'd':
             jugador->procesarEntrada(comando);
             jugador->mover();
-            break;
+            return "";
             
         case 'z':
             std::cout << "Habilidad no implementada aún" << std::endl;
-            break;
+            return "";
             
         case 'x':
-            jugador->procesarEntrada(comando);
             {
-                std::string resultado = jugador->atacar();
-                if (!resultado.empty()) {
-                    std::cout << resultado << std::endl;
-                }
+                jugador->procesarEntrada(comando);
+                return jugador->atacar();
             }
-    break;
             
         case 'c':
             std::cout << "Interacción no implementada aún" << std::endl;
-            break;
+            return "";
             
         case 'p':
             gameOver = true;
-            break;
+            return "";
             
         default:
             std::cout << "Comando no válido" << std::endl;
+            return "";
     }
 }
 
@@ -111,9 +112,10 @@ void Game::run() {
   }
 
   char comando;
+  string resultado = "";
   while (!gameOver) {
     limpiarPantalla();
-    mostrarEstado();
+    mostrarEstado(resultado);
 
     if (!(std::cin >> comando)) {
       std::cin.clear();
@@ -121,6 +123,6 @@ void Game::run() {
       continue;
     }
 
-    procesarComando(comando);
+    resultado = procesarComando(comando);
   }
 }
