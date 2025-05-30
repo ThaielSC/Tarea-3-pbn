@@ -74,8 +74,14 @@ void Game::procesarComando(char comando) {
             break;
             
         case 'x':
-            std::cout << "Ataque no implementado aún" << std::endl;
-            break;
+            jugador->procesarEntrada(comando);
+            {
+                std::string resultado = jugador->atacar();
+                if (!resultado.empty()) {
+                    std::cout << resultado << std::endl;
+                }
+            }
+    break;
             
         case 'c':
             std::cout << "Interacción no implementada aún" << std::endl;

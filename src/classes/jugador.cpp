@@ -1,6 +1,6 @@
 #include "jugador.h"
 #include <iostream>
-
+#include <sstream>
 
 char aMinuscula(char c) {
     if (c >= 'A' && c <= 'Z') {
@@ -20,25 +20,31 @@ void Jugador::procesarEntrada(char tecla) {
     tecla = aMinuscula(tecla);
     
     // Direcciones
-    char nuevaDireccion;
-    switch(tecla) {
-        case 'w': nuevaDireccion = 'N'; break;
-        case 's': nuevaDireccion = 'S'; break;
-        case 'd': nuevaDireccion = 'E'; break;
-        case 'a': nuevaDireccion = 'O'; break;
-        default: return;
+    if (tecla == 'w' || tecla == 's' || tecla == 'd' || tecla == 'a') {
+        char nuevaDireccion;
+        switch(tecla) {
+            case 'w': nuevaDireccion = 'N'; break;
+            case 's': nuevaDireccion = 'S'; break;
+            case 'd': nuevaDireccion = 'E'; break;
+            case 'a': nuevaDireccion = 'O'; break;
+            default: return;
+        }
+        
+        // Si es la misma direccion mover
+        if (tecla == aMinuscula(ultimaTecla) && direccionActual == nuevaDireccion) {
+            esperandoMovimiento = true;
+        } else {
+            // Si es una tecla diferente solo girar
+            direccionActual = nuevaDireccion;
+            esperandoMovimiento = false;
+        }
+        
+        ultimaTecla = tecla;
     }
-    
-    // Si es la misma direccion mover
-    if (tecla == aMinuscula(ultimaTecla) && direccionActual == nuevaDireccion) {
-        esperandoMovimiento = true;
-    } else {
-        // Si es una tecla diferente solo girar
-        direccionActual = nuevaDireccion;
-        esperandoMovimiento = false;
+    // Ataque
+    else if (tecla == 'x') {
+        atacar();
     }
-    
-    ultimaTecla = tecla;
 }
 
 void Jugador::mover() {
@@ -72,6 +78,44 @@ void Jugador::mover() {
     }
     
     esperandoMovimiento = false;
+}
+
+bool Jugador::hayEnemigoEnDireccion(int& enemigoY, int& enemigoX) const {
+    if (!mazmorra) return false;
+    
+    enemigoY = y;
+    enemigoX = x;
+    
+    // Obtener la casilla en la dirección que mira el jugador
+    switch(direccionActual) {
+        case 'N': enemigoY--; break;
+        case 'S': enemigoY++; break;
+        case 'E': enemigoX++; break;
+        case 'O': enemigoX--; break;
+    }
+    
+    // Verificar si está dentro de los límites
+    if (enemigoY >= 0 && enemigoY < mazmorra->altoPrincipal &&
+        enemigoX >= 0 && enemigoX < mazmorra->anchoPrincipal) {
+        string celda = mazmorra->salaPrincipal[enemigoY][enemigoX];
+        return (celda == "E " || celda == "J ");  // Enemigo o Jefe
+    }
+    
+    return false;
+}
+
+string Jugador::atacar() {
+    if (!mazmorra) return "";
+    
+    int enemigoY, enemigoX;
+    if (hayEnemigoEnDireccion(enemigoY, enemigoX)) {
+        mazmorra->salaPrincipal[enemigoY][enemigoX] = "- ";
+    
+        std::stringstream mensaje;
+        mensaje << "¡Ataque con espada a enemigo en (" << enemigoY << ", " << enemigoX << ") ";
+        return mensaje.str();
+    }
+    return "No hay un enemigo en la dirección actual";
 }
 
 // Encontrar la posición inicial de Link

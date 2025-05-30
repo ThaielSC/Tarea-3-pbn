@@ -3,7 +3,7 @@
 #include <sstream>
 using namespace std;
 
-Enemigo::Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int>>& movimientos, int daño, int rango, int frecuencia)
+Enemigo::Enemigo(int y, int x, int vida, const std::vector<std::pair<int, int> >& movimientos, int daño, int rango, int frecuencia)
     : Entidad(y, x, vida, movimientos, daño, rango), frecuencia(frecuencia) {}
 
 int Enemigo::getFrecuencia() const {
@@ -39,7 +39,7 @@ Enemigo Enemigo::leerDesdeStream(std::istream& is) {
     int y = stoi(datos[0]);
     int x = stoi(datos[1]);
     int numMovs = stoi(datos[2]);
-    std::vector<std::pair<int, int>> movimientos;
+    std::vector<std::pair<int, int> > movimientos;
     for (int i = 0; i < numMovs; ++i) {
         int dy = stoi(datos[3 + 2 * i]);
         int dx = stoi(datos[3 + 2 * i + 1]);
