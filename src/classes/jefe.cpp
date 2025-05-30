@@ -27,7 +27,7 @@ Jefe Jefe::leerDesdeStream(std::istream &is) {
   int x = stoi(datos[2]);
   int numMovs = stoi(datos[3]);
 
-  vector<pair<int, int>> movimientos;
+  vector<pair<int, int> > movimientos;
   for (int i = 0; i < numMovs; ++i) {
     int dy = stoi(datos[4 + 2 * i]);
     int dx = stoi(datos[4 + 2 * i + 1]);
