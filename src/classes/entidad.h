@@ -1,32 +1,31 @@
 #ifndef ENTIDAD_H
 #define ENTIDAD_H
 
-#include <vector>
 #include <utility>
+#include <vector>
 
 class Entidad {
-protected:
-    int y, x;
-    int vida;
-    std::vector<std::pair<int, int> > movimientos;
-    int rango;
-    int daño;
-    int indiceMovimiento;
+private:
+  int y, x;
+  int vida;
+  int rango;
+  int daño;
 
 public:
-    Entidad() = default;
+  Entidad() = default;
 
-    Entidad(int y, int x, int vida, const std::vector<std::pair<int, int> > & movimientos, int rango, int daño);
+  Entidad(int y, int x, int vida, int rango, int daño);
 
-    int getX() const;
-    int getY() const;
-    int getVida() const;
-    int getRango() const;
-    int getDaño() const;
+  void setX(int);
+  void setY(int);
+  int getX() const;
+  int getY() const;
+  int getVida() const;
+  int getRango() const;
+  int getDaño() const;
+  void updatePos(int, int);
 
-    virtual ~Entidad() = default;
-
-    virtual void mover()=0; //Esto porque se hace override en todas las clases que heredan
+  virtual void mover() = 0;
 };
 
 #endif
