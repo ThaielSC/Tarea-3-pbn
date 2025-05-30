@@ -1,4 +1,5 @@
 #include "jugador.h"
+#include <sstream>
 
 char aMinuscula(char c) {
   if (c >= 'A' && c <= 'Z') {
@@ -12,37 +13,44 @@ Jugador::Jugador(int y, int x, int vida, int daño, int rango)
       esperandoMovimiento(false), mazmorra(nullptr) {}
 
 void Jugador::procesarEntrada(char tecla) {
+
   tecla = aMinuscula(tecla);
 
   // Direcciones
-  char nuevaDireccion;
-  switch (tecla) {
-  case 'w':
-    nuevaDireccion = 'N';
-    break;
-  case 's':
-    nuevaDireccion = 'S';
-    break;
-  case 'd':
-    nuevaDireccion = 'E';
-    break;
-  case 'a':
-    nuevaDireccion = 'O';
-    break;
-  default:
-    return;
-  }
+  if (tecla == 'w' || tecla == 's' || tecla == 'd' || tecla == 'a') {
+    char nuevaDireccion;
+    switch (tecla) {
+    case 'w':
+      nuevaDireccion = 'N';
+      break;
+    case 's':
+      nuevaDireccion = 'S';
+      break;
+    case 'd':
+      nuevaDireccion = 'E';
+      break;
+    case 'a':
+      nuevaDireccion = 'O';
+      break;
+    default:
+      return;
+    }
 
-  // Si es la misma direccion mover
-  if (tecla == aMinuscula(ultimaTecla) && direccionActual == nuevaDireccion) {
-    esperandoMovimiento = true;
-  } else {
-    // Si es una tecla diferente solo girar
-    direccionActual = nuevaDireccion;
-    esperandoMovimiento = false;
-  }
+    // Si es la misma direccion mover
+    if (tecla == aMinuscula(ultimaTecla) && direccionActual == nuevaDireccion) {
+      esperandoMovimiento = true;
+    } else {
+      // Si es una tecla diferente solo girar
+      direccionActual = nuevaDireccion;
+      esperandoMovimiento = false;
+    }
 
-  ultimaTecla = tecla;
+    ultimaTecla = tecla;
+  }
+  // Ataque
+  else if (tecla == 'x') {
+    atacar();
+  }
 }
 
 void Jugador::mover() {
@@ -104,4 +112,52 @@ Jugador Jugador::crearDesdeMapaMazmorra(const Mazmorra &mazmorra) {
   }
 
   return Jugador(posY, posX, 100, 20, 1);
+}
+
+bool Jugador::hayEnemigoEnDireccion(int &enemigoY, int &enemigoX) const {
+  if (!mazmorra)
+    return false;
+
+  enemigoY = getY();
+  enemigoX = getX();
+
+  switch (direccionActual) {
+  case 'N':
+    enemigoY--;
+    break;
+  case 'S':
+    enemigoY++;
+    break;
+  case 'E':
+    enemigoX++;
+    break;
+  case 'O':
+    enemigoX--;
+    break;
+  }
+
+  // Verificar si está dentro de los límites
+  if (enemigoY >= 0 && enemigoY < mazmorra->altoPrincipal && enemigoX >= 0 &&
+      enemigoX < mazmorra->anchoPrincipal) {
+    string celda = mazmorra->salaPrincipal[enemigoY][enemigoX];
+    return (celda == "E " || celda == "J ");
+  }
+
+  return false;
+}
+
+string Jugador::atacar() {
+  if (!mazmorra)
+    return "";
+
+  int enemigoY, enemigoX;
+  if (hayEnemigoEnDireccion(enemigoY, enemigoX)) {
+    mazmorra->salaPrincipal[enemigoY][enemigoX] = "- ";
+
+    stringstream mensaje;
+    mensaje << "¡Ataque con espada a enemigo en (" << enemigoY << ", "
+            << enemigoX << ") ";
+    return mensaje.str();
+  }
+  return "No hay un enemigo en la dirección actual";
 }

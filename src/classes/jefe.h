@@ -10,6 +10,7 @@ private:
 
 public:
   Jefe(const std::string &nombre, int y, int x, int vida,
+
        const std::vector<std::pair<int, int>> &movimientos, int daño, int rango,
        int frecuencia);
 

@@ -16,7 +16,6 @@ class Utils {};
 
 class Game {
 private:
-  // Dungeon current_dungeon;
   vector<Mazmorra> dungeons;
   string enemys_path;
   Mazmorra *mazmorra;
