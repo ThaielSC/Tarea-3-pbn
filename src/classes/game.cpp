@@ -67,7 +67,7 @@ void Game::mostrarEstado() const {
 }
 
 void Game::procesarComando(char comando) {
-<<<<<<< HEAD
+
   comando = std::tolower(comando);
 
   switch (comando) {
@@ -84,7 +84,13 @@ void Game::procesarComando(char comando) {
     break;
 
   case 'x':
-    std::cout << "Ataque no implementado aún" << std::endl;
+    jugador->procesarEntrada(comando);
+    {
+      std::string resultado = jugador->atacar();
+      if (!resultado.empty()) {
+        std::cout << resultado << std::endl;
+      }
+    }
     break;
 
   case 'c':
@@ -98,44 +104,6 @@ void Game::procesarComando(char comando) {
   default:
     std::cout << "Comando no válido" << std::endl;
   }
-=======
-    comando = std::tolower(comando);
-    
-    switch(comando) {
-        case 'w':
-        case 'a':
-        case 's':
-        case 'd':
-            jugador->procesarEntrada(comando);
-            jugador->mover();
-            break;
-            
-        case 'z':
-            std::cout << "Habilidad no implementada aún" << std::endl;
-            break;
-            
-        case 'x':
-            jugador->procesarEntrada(comando);
-            {
-                std::string resultado = jugador->atacar();
-                if (!resultado.empty()) {
-                    std::cout << resultado << std::endl;
-                }
-            }
-    break;
-            
-        case 'c':
-            std::cout << "Interacción no implementada aún" << std::endl;
-            break;
-            
-        case 'p':
-            gameOver = true;
-            break;
-            
-        default:
-            std::cout << "Comando no válido" << std::endl;
-    }
->>>>>>> 4ef7313dfcd5e71df0aa477bd5abb25dc8d726b0
 }
 
 void Game::run() {
