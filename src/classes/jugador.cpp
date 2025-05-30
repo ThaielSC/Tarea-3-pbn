@@ -46,18 +46,29 @@ void Jugador::mover() {
     
     int antiguoY = y;
     int antiguoX = x;
+    int nuevoY = y;
+    int nuevoX = x;
     
-    // Moverse según la dirección
+    // Calcular la nueva posición según la dirección
     switch(direccionActual) {
-        case 'N': y--; break;
-        case 'S': y++; break;
-        case 'E': x++; break;
-        case 'O': x--; break;
+        case 'N': nuevoY--; break;
+        case 'S': nuevoY++; break;
+        case 'E': nuevoX++; break;
+        case 'O': nuevoX--; break;
     }
     
-    // Actualizar el mapa
-    if (mazmorra) {
-        mazmorra->actualizarPosicionJugador(antiguoY, antiguoX, y, x);
+    // Verificar si la nueva posición es valida
+    if (mazmorra && nuevoY >= 0 && nuevoY < mazmorra->altoPrincipal && 
+        nuevoX >= 0 && nuevoX < mazmorra->anchoPrincipal) {
+        // Colisiones
+        string nuevaCelda = mazmorra->salaPrincipal[nuevoY][nuevoX];
+        if (nuevaCelda == "- ") {
+            // Actualizar la posición
+            y = nuevoY;
+            x = nuevoX;
+            // Actualizar el mapa
+            mazmorra->actualizarPosicionJugador(antiguoY, antiguoX, y, x);
+        }
     }
     
     esperandoMovimiento = false;
