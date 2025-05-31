@@ -6,13 +6,13 @@
 #include "jefe.h"
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Mazmorra : public IMap {
 public:
   int anchoPrincipal, altoPrincipal;
   int anchoJefe, altoJefe;
-  int numEnemigosIniciales;
   vector<vector<string>> salaPrincipal;
   vector<vector<string>> salaJefe;
 
@@ -27,9 +27,16 @@ public:
   const vector<Enemigo> &getEnemigosJefe() const;
 
   void mostrar() const;
+
   void actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY,
                                  int nuevoX);
-  void update(int, int, int, int, char) override;
+
+  void update(int oldx, int oldy, int newx, int newy, char symbol) override;
+
+  // Métodos para manejar enemigos
+  Enemigo *obtenerEnemigoEn(int y, int x);
+  void eliminarEnemigoEn(int y, int x);
+  void actualizarEnemigo(const Enemigo &enemigo);
 
 private:
   vector<Enemigo> enemigosIniciales;

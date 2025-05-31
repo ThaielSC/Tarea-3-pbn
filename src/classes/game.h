@@ -20,14 +20,12 @@ private:
   string enemys_path;
   Mazmorra *mazmorra;
   Jugador *jugador;
-  vector<Enemigo> *enemigosMain;
-  vector<Enemigo> *enemigosBoss;
   bool gameOver;
   int llaves;
   bool llavejefe;
 
-  void mostrarEstado() const;
-  void procesarComando(char comando);
+  void mostrarEstado(string resultado) const;
+  string procesarComando(char comando);
   void limpiarPantalla() const;
 
 public:

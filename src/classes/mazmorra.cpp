@@ -54,18 +54,82 @@ void Mazmorra::actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY,
 }
 
 void Mazmorra::update(int oldx, int oldy, int newx, int newy, char symbol) {
-  // Ensure coordinates are within bounds before accessing
+  // Asegurar que las coordenadas son válidas antes de acceder
   if (oldy >= 0 && oldy < altoPrincipal && oldx >= 0 && oldx < anchoPrincipal) {
-    salaPrincipal[oldy][oldx] =
-        "- "; // Assuming "- " is an empty, traversable cell
+    salaPrincipal[oldy][oldx] = "- "; // Suponiendo que "- " es celda vacía
   }
-  // Handle salaJefe similarly, or determine if the update is for principal or
-  // jefe room For simplicity, assuming symbol 'E' always goes to salaPrincipal
-  // for now
+  // Actualizar nueva posición
   if (newy >= 0 && newy < altoPrincipal && newx >= 0 && newx < anchoPrincipal) {
-    salaPrincipal[newy][newx] = string(1, symbol) + " ";
+    salaPrincipal[newy][newx] = std::string(1, symbol) + " ";
   } else {
-    // Potentially update salaJefe if coordinates match its dimensions and
-    // context
+    // Aquí podrías manejar actualización en salaJefe si corresponde
+  }
+}
+
+Enemigo *Mazmorra::obtenerEnemigoEn(int y, int x) {
+  // Buscar en enemigos iniciales
+  for (auto &enemigo : enemigosIniciales) {
+    if (enemigo.getY() == y && enemigo.getX() == x) {
+      return &enemigo;
+    }
+  }
+
+  // Buscar en enemigos del jefe
+  for (auto &enemigo : enemigosJefe) {
+    if (enemigo.getY() == y && enemigo.getX() == x) {
+      return &enemigo;
+    }
+  }
+
+  // Verificar si es el jefe
+  if (jefe.getY() == y && jefe.getX() == x) {
+    return &jefe;
+  }
+
+  return nullptr;
+}
+
+void Mazmorra::eliminarEnemigoEn(int y, int x) {
+  // Eliminar de enemigos iniciales
+  auto it = enemigosIniciales.begin();
+  while (it != enemigosIniciales.end()) {
+    if (it->getY() == y && it->getX() == x) {
+      it = enemigosIniciales.erase(it);
+      salaPrincipal[y][x] = "- ";
+      return;
+    }
+    ++it;
+  }
+
+  // Eliminar de enemigos del jefe
+  it = enemigosJefe.begin();
+  while (it != enemigosJefe.end()) {
+    if (it->getY() == y && it->getX() == x) {
+      it = enemigosJefe.erase(it);
+      salaJefe[y][x] = "- ";
+      return;
+    }
+    ++it;
+  }
+}
+
+void Mazmorra::actualizarEnemigo(const Enemigo &enemigo) {
+  int y = enemigo.getY();
+  int x = enemigo.getX();
+
+  // Actualizar en enemigos iniciales
+  for (auto &e : enemigosIniciales) {
+    if (e.getY() == y && e.getX() == x) {
+      e = enemigo;
+      return;
+    }
+  }
+
+  // Actualizar en enemigos del jefe
+  for (auto &e : enemigosJefe) {
+    if (e.getY() == y && e.getX() == x) {
+      e = enemigo;
+      return;
+    }
   }
 }

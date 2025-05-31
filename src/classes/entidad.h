@@ -31,6 +31,10 @@ public:
   void updatePos(int, int);
   void setMap(IMap &map);
 
+  // Métodos para manejar vida
+  void recibirDaño(int cantidad);
+  bool estaVivo() const;
+
   virtual void mover() = 0;
 };
 

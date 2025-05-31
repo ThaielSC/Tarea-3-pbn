@@ -9,11 +9,14 @@ char aMinuscula(char c) {
 }
 
 Jugador::Jugador(int y, int x, int vida, int daño, int rango)
-    : Entidad(y, x, vida, rango, daño), direccionActual('S'), ultimaTecla(' '),
-      esperandoMovimiento(false), mazmorra(nullptr) {}
+    : Entidad(y, x, vida, rango, daño), 
+      direccionActual('S'), 
+      ultimaTecla(' '),
+      esperandoMovimiento(false), 
+      debeAtacar(false),
+      mazmorra(nullptr) {}
 
 void Jugador::procesarEntrada(char tecla) {
-
   tecla = aMinuscula(tecla);
 
   // Direcciones
@@ -46,10 +49,12 @@ void Jugador::procesarEntrada(char tecla) {
     }
 
     ultimaTecla = tecla;
+    debeAtacar = false;
   }
   // Ataque
   else if (tecla == 'x') {
-    atacar();
+    debeAtacar = true;
+    ultimaTecla = tecla;
   }
 }
 
@@ -118,9 +123,23 @@ bool Jugador::hayEnemigoEnDireccion(int &enemigoY, int &enemigoX) const {
   if (!mazmorra)
     return false;
 
-  enemigoY = getY();
-  enemigoX = getX();
+  if (enemigoY >= 0 && enemigoY < mazmorra->altoPrincipal && enemigoX >= 0 &&
+      enemigoX < mazmorra->anchoPrincipal) {
+    string celda = mazmorra->salaPrincipal[enemigoY][enemigoX];
+    return (celda == "E " || celda == "J ");
+  }
 
+  return false;
+}
+
+string Jugador::atacar() {
+  if (!mazmorra || !debeAtacar)
+    return "";
+
+  int enemigoY = getY();
+  int enemigoX = getX();
+
+  // Calcular la posición del enemigo según la dirección
   switch (direccionActual) {
   case 'N':
     enemigoY--;
@@ -136,28 +155,31 @@ bool Jugador::hayEnemigoEnDireccion(int &enemigoY, int &enemigoX) const {
     break;
   }
 
-  // Verificar si está dentro de los límites
-  if (enemigoY >= 0 && enemigoY < mazmorra->altoPrincipal && enemigoX >= 0 &&
-      enemigoX < mazmorra->anchoPrincipal) {
-    string celda = mazmorra->salaPrincipal[enemigoY][enemigoX];
-    return (celda == "E " || celda == "J ");
-  }
-
-  return false;
-}
-
-string Jugador::atacar() {
-  if (!mazmorra)
-    return "";
-
-  int enemigoY, enemigoX;
+  // Verificar si hay enemigo
   if (hayEnemigoEnDireccion(enemigoY, enemigoX)) {
-    mazmorra->salaPrincipal[enemigoY][enemigoX] = "- ";
-
+    Enemigo* enemigo = mazmorra->obtenerEnemigoEn(enemigoY, enemigoX);
+    if (!enemigo) return "";
+    
+    // Aplicar daño al enemigo
+    enemigo->recibirDaño(getDaño());
+    
     stringstream mensaje;
-    mensaje << "¡Ataque con espada a enemigo en (" << enemigoY << ", "
-            << enemigoX << ") ";
+    mensaje << "Ataque con espada a enemigo en (" << enemigoY << ", "
+            << enemigoX << ")";
+    
+    // Si el enemigo muere, eliminarlo
+    if (!enemigo->estaVivo()) {
+      mensaje << " ¡El enemigo ha sido derrotado!";
+      mazmorra->eliminarEnemigoEn(enemigoY, enemigoX);
+    } else {
+      mensaje << " (Vida restante del enemigo: " << enemigo->getVida() << ")";
+      mazmorra->actualizarEnemigo(*enemigo);
+    }
+    
+    debeAtacar = false;
     return mensaje.str();
   }
-  return "No hay un enemigo en la dirección actual";
+  
+  debeAtacar = false;
+  return "";
 }

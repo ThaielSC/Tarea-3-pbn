@@ -8,14 +8,14 @@
 class Enemigo : public Entidad {
 private:
   int frecuencia;
-  std::vector<std::pair<int, int>> movimientos;
+  std::vector<std::pair<int, int> > movimientos;
   int indiceMovimiento;
 
 public:
   Enemigo() = default;
 
   Enemigo(int y, int x, int vida,
-          const std::vector<std::pair<int, int>> &movimientos, int daño,
+          const std::vector<std::pair<int, int> > &movimientos, int daño,
           int rango, int frecuencia);
 
   virtual ~Enemigo() = default;

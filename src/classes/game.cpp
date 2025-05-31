@@ -28,7 +28,7 @@ vector<Mazmorra> &Game::get_dungeons() {
 
 void Game::limpiarPantalla() const { system("clear"); }
 
-void Game::mostrarEstado() const {
+void Game::mostrarEstado(string resultado) const {
   std::cout << "=============================" << std::endl;
   std::cout << "Mapa:" << std::endl;
   mazmorra->mostrar();
@@ -36,6 +36,10 @@ void Game::mostrarEstado() const {
 
   std::cout << "=============================" << std::endl;
   std::cout << std::endl;
+
+  if (!resultado.empty()) {
+    std::cout << resultado << std::endl << std::endl;
+  }
 
   // Mostrar información del jugador
   std::cout << "Dirección actual: ";
@@ -66,44 +70,40 @@ void Game::mostrarEstado() const {
   std::cout << "Comando (WASD/Z/X/C, P para salir): ";
 }
 
-void Game::procesarComando(char comando) {
-
-  comando = std::tolower(comando);
-
-  switch (comando) {
-  case 'w':
-  case 'a':
-  case 's':
-  case 'd':
-    jugador->procesarEntrada(comando);
-    jugador->mover();
-    break;
-
-  case 'z':
-    std::cout << "Habilidad no implementada aún" << std::endl;
-    break;
-
-  case 'x':
-    jugador->procesarEntrada(comando);
-    {
-      std::string resultado = jugador->atacar();
-      if (!resultado.empty()) {
-        std::cout << resultado << std::endl;
-      }
+string Game::procesarComando(char comando) {
+    comando = std::tolower(comando);
+    
+    switch(comando) {
+        case 'w':
+        case 'a':
+        case 's':
+        case 'd':
+            jugador->procesarEntrada(comando);
+            jugador->mover();
+            return "";
+            
+        case 'z':
+            std::cout << "Habilidad no implementada aún" << std::endl;
+            return "";
+            
+        case 'x':
+            {
+                jugador->procesarEntrada(comando);
+                return jugador->atacar();
+            }
+            
+        case 'c':
+            std::cout << "Interacción no implementada aún" << std::endl;
+            return "";
+            
+        case 'p':
+            gameOver = true;
+            return "";
+            
+        default:
+            std::cout << "Comando no válido" << std::endl;
+            return "";
     }
-    break;
-
-  case 'c':
-    std::cout << "Interacción no implementada aún" << std::endl;
-    break;
-
-  case 'p':
-    gameOver = true;
-    break;
-
-  default:
-    std::cout << "Comando no válido" << std::endl;
-  }
 }
 
 void Game::run() {
@@ -117,9 +117,10 @@ void Game::run() {
     enemigo.setMap(*mazmorra); // ahora sí puedes modificar
   }
   char comando;
+  string resultado = "";
   while (!gameOver) {
     limpiarPantalla();
-    mostrarEstado();
+    mostrarEstado(resultado);
 
     for (Enemigo &enemigo : enemigos) {
       enemigo.mover();
@@ -131,6 +132,6 @@ void Game::run() {
       continue;
     }
 
-    procesarComando(comando);
+    resultado = procesarComando(comando);
   }
 }
