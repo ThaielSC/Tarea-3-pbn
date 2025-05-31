@@ -1,41 +1,42 @@
 #ifndef MAZMORRA_H
 #define MAZMORRA_H
 
-#include "jefe.h"
 #include "enemigo.h"
+#include "entidad.h"
+#include "jefe.h"
 #include <string>
 #include <vector>
+
 using namespace std;
 
-class Mazmorra {
+class Mazmorra : public IMap {
 public:
   int anchoPrincipal, altoPrincipal;
   int anchoJefe, altoJefe;
-  int numEnemigosIniciales;
-  vector<vector<string> > salaPrincipal;
-  vector<vector<string> > salaJefe;
+  vector<vector<string>> salaPrincipal;
+  vector<vector<string>> salaJefe;
 
-  Mazmorra(
-    int anchoPrincipal, int altoPrincipal,
-    int anchoJefe, int altoJefe,
-    const vector<vector<string> > & salaPrincipal,
-    const vector<vector<string> > & salaJefe,
-    const vector<Enemigo> & enemigosIniciales,
-    const Jefe& jefe,
-    const vector<Enemigo> & enemigosJefe
-  );
+  Mazmorra(int anchoPrincipal, int altoPrincipal, int anchoJefe, int altoJefe,
+           const vector<vector<string>> &salaPrincipal,
+           const vector<vector<string>> &salaJefe,
+           const vector<Enemigo> &enemigosIniciales, const Jefe &jefe,
+           const vector<Enemigo> &enemigosJefe);
 
-  const vector<Enemigo> & getEnemigosIniciales() const;
-  const Jefe& getJefe() const;
-  const vector<Enemigo> & getEnemigosJefe() const;
-  
+  const vector<Enemigo> &getEnemigosIniciales() const;
+  const Jefe &getJefe() const;
+  const vector<Enemigo> &getEnemigosJefe() const;
+
   void mostrar() const;
-  void actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY, int nuevoX);
-  
-  // Nuevos métodos para manejar enemigos
-  Enemigo* obtenerEnemigoEn(int y, int x);
+
+  void actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY,
+                                 int nuevoX);
+
+  void update(int oldx, int oldy, int newx, int newy, char symbol) override;
+
+  // Métodos para manejar enemigos
+  Enemigo *obtenerEnemigoEn(int y, int x);
   void eliminarEnemigoEn(int y, int x);
-  void actualizarEnemigo(const Enemigo& enemigo);
+  void actualizarEnemigo(const Enemigo &enemigo);
 
 private:
   vector<Enemigo> enemigosIniciales;

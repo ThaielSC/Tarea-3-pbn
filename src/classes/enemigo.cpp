@@ -6,17 +6,33 @@ Enemigo::Enemigo(int y, int x, int vida,
                  const std::vector<std::pair<int, int>> &movimientos, int daño,
                  int rango, int frecuencia)
     : Entidad(y, x, vida, daño, rango), frecuencia(frecuencia),
-      movimientos(movimientos) {}
+      movimientos(movimientos), indiceMovimiento(0) {}
 
 int Enemigo::getFrecuencia() const { return frecuencia; }
 
 int Enemigo::getNumeroMovimientos() const { return movimientos.size(); }
 
 void Enemigo::mover() {
-  if (movimientos.empty())
+  if (notMovments())
     return;
+  if (!map) {
+    return;
+  }
+
+  int old_map_x = getX();
+  int old_map_y = getY();
+
   auto [dy, dx] = movimientos[indiceMovimiento];
-  updatePos(dx, dy);
+
+  int original_y = getOX();
+  int original_x = getOY();
+
+  int new_absolute_y = original_y + dy;
+  int new_absolute_x = original_x + dx;
+
+  updatePos(new_absolute_x, new_absolute_y);
+  map->update(old_map_x, old_map_y, getX(), getY(), 'E');
+
   indiceMovimiento = (indiceMovimiento + 1) % movimientos.size();
 }
 
