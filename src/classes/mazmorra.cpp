@@ -21,8 +21,8 @@ void Mazmorra::mostrar() const {
 }
 
 Mazmorra::Mazmorra(int anchoPrincipal, int altoPrincipal, int anchoJefe,
-                   int altoJefe, const vector<vector<string>> &salaPrincipal,
-                   const vector<vector<string>> &salaJefe,
+                   int altoJefe, const vector<vector<string> > &salaPrincipal,
+                   const vector<vector<string> > &salaJefe,
                    const vector<Enemigo> &enemigosIniciales, const Jefe &jefe,
                    const vector<Enemigo> &enemigosJefe)
     : anchoPrincipal(anchoPrincipal), altoPrincipal(altoPrincipal),
@@ -53,7 +53,7 @@ void Mazmorra::actualizarPosicionJugador(int antiguoY, int antiguoX, int nuevoY,
   }
 }
 
-void Mazmorra::update(int oldx, int oldy, int newx, int newy, char symbol) {
+void Mazmorra::update(int oldx, int oldy, int newx, int newy, char symbol) noexcept {
   // Asegurar que las coordenadas son válidas antes de acceder
   if (oldy >= 0 && oldy < altoPrincipal && oldx >= 0 && oldx < anchoPrincipal) {
     salaPrincipal[oldy][oldx] = "- "; // Suponiendo que "- " es celda vacía
