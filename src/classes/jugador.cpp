@@ -183,3 +183,75 @@ string Jugador::atacar() {
   debeAtacar = false;
   return "";
 }
+
+bool Jugador::hayObjetoInteractuableEnDireccion(int& objetoY, int& objetoX, string& tipoObjeto) const {
+    if (!mazmorra) return false;
+
+    objetoY = getY();
+    objetoX = getX();
+
+    switch (direccionActual) {
+    case 'N':
+        objetoY--;
+        break;
+    case 'S':
+        objetoY++;
+        break;
+    case 'E':
+        objetoX++;
+        break;
+    case 'O':
+        objetoX--;
+        break;
+    }
+
+    if (objetoY >= 0 && objetoY < mazmorra->altoPrincipal &&
+        objetoX >= 0 && objetoX < mazmorra->anchoPrincipal) {
+        string celda = mazmorra->salaPrincipal[objetoY][objetoX];
+        if (celda == "C " || celda == "U ") {
+            tipoObjeto = "cofre";
+            return true;
+        }
+        if (celda == "K " || celda == "U ") {
+            tipoObjeto = "cofre_jefe";
+            return true;
+        }
+        if (celda == "P ") {
+            tipoObjeto = "puerta";
+            return true;
+        }
+    }
+
+    return false;
+}
+
+string Jugador::interactuar() {
+    int objetoY, objetoX;
+    string tipoObjeto;
+
+    if (!hayObjetoInteractuableEnDireccion(objetoY, objetoX, tipoObjeto)) {
+        return "No hay nada con qué interactuar en esa dirección.";
+    }
+
+    if (tipoObjeto == "cofre") {
+        string estadoCofre = mazmorra->salaPrincipal[objetoY][objetoX];
+        if (estadoCofre == "C ") {
+            mazmorra->salaPrincipal[objetoY][objetoX] = "U ";
+            return "¡Has abierto un cofre y obtenido una llave!";
+        } else {
+            return "Este cofre ya está abierto.";
+        }
+    } else if (tipoObjeto == "cofre_jefe") {
+        string estadoCofre = mazmorra->salaPrincipal[objetoY][objetoX];
+        if (estadoCofre == "K ") {
+            mazmorra->salaPrincipal[objetoY][objetoX] = "U ";
+            return "¡Has abierto un cofre y obtenido la llave del jefe!";
+        } else {
+            return "Este cofre ya está abierto.";
+        }
+    } else if (tipoObjeto == "puerta") {
+        return "Interacción con puertas aún no implementada.";
+    }
+
+    return "";
+}

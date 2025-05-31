@@ -93,8 +93,15 @@ string Game::procesarComando(char comando) {
             }
             
         case 'c':
-            std::cout << "Interacción no implementada aún" << std::endl;
-            return "";
+            {
+                string resultado = jugador->interactuar();
+                if (resultado.find("obtenido una llave") != string::npos) {
+                    llaves++;
+                } else if (resultado.find("llave del jefe") != string::npos) {
+                    llavejefe = true;
+                }
+                return resultado;
+            }
             
         case 'p':
             gameOver = true;
